@@ -1,7 +1,7 @@
 # Проект «Большое путешествие» [![Build status][travis-image]][travis-url]
 
 * Студент: [Миша Забава](https://up.htmlacademy.ru/ecmascript/13/user/1066793).
-* Наставник: `Неизвестно`.
+* Наставник: [Иван Клименко](https://htmlacademy.ru/profile/id1524969).
 
 ---
 
