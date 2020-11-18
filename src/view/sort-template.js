@@ -1,4 +1,4 @@
-export function createSortTemplate() {
+function createSortTemplate() {
   return `
     <form class="trip-events__trip-sort  trip-sort" action="#" method="get">
       <div
@@ -75,3 +75,7 @@ export function createSortTemplate() {
     </form>
   `;
 }
+
+export {
+  createSortTemplate
+};

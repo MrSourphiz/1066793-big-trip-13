@@ -1,4 +1,4 @@
-export function createPointTemplate() {
+function createPointTemplate() {
   return `
     <li class="trip-events__item">
       <div
@@ -83,3 +83,7 @@ export function createPointTemplate() {
     </li>
   `;
 }
+
+export {
+  createPointTemplate
+};

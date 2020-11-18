@@ -1,4 +1,4 @@
-export function createMenuTemplate() {
+function createMenuTemplate() {
   return `
     <nav class="trip-controls__trip-tabs  trip-tabs">
       <a
@@ -12,3 +12,7 @@ export function createMenuTemplate() {
     </nav>
   `;
 }
+
+export {
+  createMenuTemplate
+};

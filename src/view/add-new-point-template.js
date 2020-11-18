@@ -1,4 +1,4 @@
-export function createTemplateForAddNewPoint() {
+function createTemplateForAddNewPoint() {
   return `
     <li class="trip-events__item">
       <form
@@ -352,3 +352,7 @@ export function createTemplateForAddNewPoint() {
     </li>
   `;
 }
+
+export {
+  createTemplateForAddNewPoint
+};

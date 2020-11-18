@@ -1,4 +1,4 @@
-export function createTemplateForEditPoint() {
+function createTemplateForEditPoint() {
   return `
     <li class="trip-events__item">
       <form
@@ -374,3 +374,7 @@ export function createTemplateForEditPoint() {
     </li>
   `;
 }
+
+export {
+  createTemplateForEditPoint
+};

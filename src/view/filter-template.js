@@ -1,4 +1,4 @@
-export function createFilterTemplate() {
+function createFilterTemplate() {
   return `
     <form class="trip-filters" action="#" method="get">
       <div
@@ -44,3 +44,7 @@ export function createFilterTemplate() {
     </form>
   `;
 }
+
+export {
+  createFilterTemplate
+};

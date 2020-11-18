@@ -1,4 +1,4 @@
-export function createRouteTemplate() {
+function createRouteTemplate() {
   return `
     <div class="trip-info__main">
       <h1
@@ -11,3 +11,7 @@ export function createRouteTemplate() {
     </div>
   `;
 }
+
+export {
+  createRouteTemplate
+};
