@@ -1,13 +1,13 @@
-import {createInfoTemplate} from "./view/info-template.js";
-import {createRouteTemplate} from "./view/route-template.js";
-import {createCostTemplate} from "./view/cost-template.js";
-import {createMenuTemplate} from "./view/menu-template.js";
-import {createFilterTemplate} from "./view/filter-template.js";
-import {createSortTemplate} from "./view/sort-template.js";
-import {createListTemplate} from "./view/list-template.js";
-import {createPointTemplate} from "./view/point-template.js";
-import {createTemplateForAddNewPoint} from "./view/add-new-point-template.js";
-import {createTemplateForEditPoint} from "./view/edit-point-template.js";
+import {createInfoTemplate} from "./view/info.js";
+import {createRouteTemplate} from "./view/route.js";
+import {createCostTemplate} from "./view/cost.js";
+import {createMenuTemplate} from "./view/menu.js";
+import {createFilterTemplate} from "./view/filter.js";
+import {createSortTemplate} from "./view/sort.js";
+import {createListTemplate} from "./view/list.js";
+import {createPointTemplate} from "./view/point.js";
+import {createTemplateForAddNewPoint} from "./view/add-new-point.js";
+import {createTemplateForEditPoint} from "./view/edit-point.js";
 
 const TRIP_EVENT_COUNT = 3;
 
