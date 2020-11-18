@@ -15,30 +15,30 @@ const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template);
 };
 
-const tripMain = document.querySelector(`.trip-main`);
-render(tripMain, createInfoTemplate(), `afterbegin`);
+const tripMain = document.querySelector('.trip-main');
+render(tripMain, createInfoTemplate(), 'afterbegin');
 
-const tripInfo = tripMain.querySelector(`.trip-info`);
-render(tripInfo, createRouteTemplate(), `beforeend`);
-render(tripInfo, createCostTemplate(), `beforeend`);
+const tripInfo = tripMain.querySelector('.trip-info');
+render(tripInfo, createRouteTemplate(), 'beforeend');
+render(tripInfo, createCostTemplate(), 'beforeend');
 
-const tripControls = tripMain.querySelector(`.trip-main__trip-controls`);
-const tripControlsTitles = tripControls.querySelectorAll(`.visually-hidden`);
-render(tripControlsTitles[0], createMenuTemplate(), `afterend`);
-render(tripControlsTitles[1], createFilterTemplate(), `afterend`);
+const tripControls = tripMain.querySelector('.trip-main__trip-controls');
+const tripControlsTitles = tripControls.querySelectorAll('.visually-hidden');
+render(tripControlsTitles[0], createMenuTemplate(), 'afterend');
+render(tripControlsTitles[1], createFilterTemplate(), 'afterend');
 
-const tripEvents = document.querySelector(`.trip-events`);
-render(tripEvents, createSortTemplate(), `beforeend`);
-render(tripEvents, createListTemplate(), `beforeend`);
+const tripEvents = document.querySelector('.trip-events');
+render(tripEvents, createSortTemplate(), 'beforeend');
+render(tripEvents, createListTemplate(), 'beforeend');
 
-const tripEventsList = tripEvents.querySelector(`.trip-events__list`);
+const tripEventsList = tripEvents.querySelector('.trip-events__list');
 
 for (let i = 0; i < TRIP_EVENT_COUNT; i++) {
-  render(tripEventsList, createPointTemplate(), `beforeend`);
+  render(tripEventsList, createPointTemplate(), 'beforeend');
 }
 
-const tripEventsItems = tripEventsList.querySelectorAll(`.trip-events__item`);
-render(tripEventsItems[0], createTemplateForEditPoint(), `afterend`);
+const tripEventsItems = tripEventsList.querySelectorAll('.trip-events__item');
+render(tripEventsItems[0], createTemplateForEditPoint(), 'afterend');
 
-render(tripEventsList, createTemplateForAddNewPoint(), `afterbegin`);
+render(tripEventsList, createTemplateForAddNewPoint(), 'afterbegin');
 
