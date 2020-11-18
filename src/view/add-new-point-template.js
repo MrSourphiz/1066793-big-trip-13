@@ -1,4 +1,4 @@
-export const createTemplateForAddNewPoint = () => {
+export function createTemplateForAddNewPoint() {
   return `<li class="trip-events__item">
       <form
         class="event event--edit"

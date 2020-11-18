@@ -11,7 +11,7 @@ import {createTemplateForEditPoint} from "./view/edit-point-template.js";
 
 const TRIP_EVENT_COUNT = 3;
 
-const render = (container, template, place) => {
+function render(container, template, place) {
   container.insertAdjacentHTML(place, template);
 };
 

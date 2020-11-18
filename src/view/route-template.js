@@ -1,4 +1,4 @@
-export const createRouteTemplate = () => {
+export function createRouteTemplate() {
   return `<div class="trip-info__main">
     <h1
       class="trip-info__title"
