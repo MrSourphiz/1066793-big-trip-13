@@ -1,5 +1,5 @@
 export const createTemplateForAddNewPoint = () => {
-    return `<li class="trip-events__item">
+  return `<li class="trip-events__item">
       <form
         class="event event--edit"
         action="#"
@@ -349,4 +349,4 @@ export const createTemplateForAddNewPoint = () => {
           </section>
       </form>
     </li>`;
-  };
+};

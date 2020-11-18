@@ -1,5 +1,5 @@
 export const createTemplateForEditPoint = () => {
-    return `<li class="trip-events__item">
+  return `<li class="trip-events__item">
       <form
         class="event event--edit"
         action="#"
@@ -371,4 +371,4 @@ export const createTemplateForEditPoint = () => {
           </section>
       </form>
     </li>`;
-  };
+};
