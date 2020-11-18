@@ -1,5 +1,6 @@
 export function createTemplateForEditPoint() {
-  return `<li class="trip-events__item">
+  return `
+    <li class="trip-events__item">
       <form
         class="event event--edit"
         action="#"
@@ -370,5 +371,6 @@ export function createTemplateForEditPoint() {
               </section>
           </section>
       </form>
-    </li>`;
-};
+    </li>
+  `;
+}
