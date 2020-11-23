@@ -13,7 +13,7 @@ const TRIP_EVENT_COUNT = 3;
 
 function render(container, template, place) {
   container.insertAdjacentHTML(place, template);
-};
+}
 
 const tripMain = document.querySelector('.trip-main');
 render(tripMain, createInfoTemplate(), 'afterbegin');
