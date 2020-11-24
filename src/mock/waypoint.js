@@ -1,3 +1,4 @@
+import {generateOffer} from "./offer.js";
 import dayjs from "dayjs";
 
 const POINT_TYPES = [
@@ -14,8 +15,6 @@ const POINT_TYPES = [
 ];
 
 const CITIES = [`Amsterdam`, `Geneva`, `Chamonix`, `Paris`, `Lyon`];
-
-const OFFERS = [`Add luggage`, `Switch to comfort class`, `Add meal`, `Choose seats`, `Travel by train`];
 
 const DESCRIPTIONS = [
   `Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн`,
@@ -67,7 +66,7 @@ function generateWayPoint() {
   return {
     pointType: getRandomInfo(POINT_TYPES),
     city: getRandomInfo(CITIES),
-    offers: getRandomInfo(OFFERS),
+    offers: generateOffer(),
     pointInfo: generateWayPointInfo(),
     timeStart: generateDate(),
     timeEnd: generateDate()
