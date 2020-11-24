@@ -1,6 +1,6 @@
 import {generateOffer} from "./offer.js";
 import {generatePointDescription} from "./description.js";
-import dayjs from "dayjs";
+import {generateTime} from "./time.js";
 
 const POINT_TYPES = [
   `Taxi`,
@@ -29,21 +29,13 @@ function getRandomInfo(array) {
   return array[randomIndex];
 }
 
-function generateDate() {
-  const maxDaysGap = 7;
-  const daysGap = getRandomInteger(-maxDaysGap, maxDaysGap);
-
-  return dayjs().add(daysGap, `day`).toDate();
-}
-
 function generateWayPoint() {
   return {
     pointType: getRandomInfo(POINT_TYPES),
     city: getRandomInfo(CITIES),
     offers: generateOffer(),
     pointInfo: generatePointDescription(),
-    timeStart: generateDate(),
-    timeEnd: generateDate()
+    time: generateTime()
   };
 }
 
