@@ -1,28 +1,28 @@
 import dayjs from "dayjs";
 
 const POINT_TYPES = [
-  'Taxi',
-  'Bus',
-  'Train',
-  'Ship',
-  'Transport',
-  'Drive',
-  'Flight',
-  'Check-in',
-  'Sightseeng',
-  'Restaurant'
+  `Taxi`,
+  `Bus`,
+  `Train`,
+  `Ship`,
+  `Transport`,
+  `Drive`,
+  `Flight`,
+  `Check-in`,
+  `Sightseeng`,
+  `Restaurant`
 ];
 
-const CITIES = ['Amsterdam', 'Geneva', 'Chamonix', 'Paris', 'Lyon'];
+const CITIES = [`Amsterdam`, `Geneva`, `Chamonix`, `Paris`, `Lyon`];
 
-const OFFERS = ['Add luggage', 'Switch to comfort class', 'Add meal', 'Choose seats', 'Travel by train'];
+const OFFERS = [`Add luggage`, `Switch to comfort class`, `Add meal`, `Choose seats`, `Travel by train`];
 
 const DESCRIPTIONS = [
-  'Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн',
-  'Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн',
-  'Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн',
-  'Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн',
-  'Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн'
+  `Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн`,
+  `Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн`,
+  `Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн`,
+  `Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн`,
+  `Пх’нглуи мглв’нафх Ктулху Р’льех вгах’нагл фхтагн`
 ];
 
 const PHOTO_COUNT = 5;
@@ -40,7 +40,7 @@ function getRandomInfo(array) {
 }
 
 function generatePhotoLink() {
-  return 'http://picsum.photos/248/152?r=' + Math.random();
+  return `http://picsum.photos/248/152?r=` + Math.random();
 }
 
 function getPhotos() {
