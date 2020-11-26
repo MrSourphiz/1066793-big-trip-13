@@ -25,9 +25,9 @@ function getDifference(start, end) {
   let totalMinuteDiff = differenceMinute - differenceHour * HOUR_DURATION;
 
   return {
-    diffDay: differenceDay + `D`,
-    diffHour: totalHourDiff + `H`,
-    diffMinute: totalMinuteDiff + `M`
+    diffDay: differenceDay,
+    diffHour: totalHourDiff,
+    diffMinute: totalMinuteDiff
   };
 }
 

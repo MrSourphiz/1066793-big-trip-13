@@ -1,10 +1,35 @@
 import dayjs from "dayjs";
 
+function checkTime(time) {
+  let result;
+  if (time === 0 || time < 0) {
+    result = ``;
+  } else {
+    result = time;
+  }
+
+  return result;
+}
+
+function addLitera(text, litera) {
+  let result;
+  if (text !== ``) {
+    result = text + litera;
+  } else {
+    result = ``;
+  }
+  return result;
+}
+
 function createPointTemplate(point) {
   const {city, pointType, time} = point;
   let day = dayjs(time.startDate).format(`MMM D`);
   let startTime = dayjs(time.startDate).format(`HH:mm`);
   let endTime = dayjs(time.endDate).format(`HH:mm`);
+
+  let diffDay = addLitera(checkTime(time.difference.diffDay), `D`);
+  let diffHour = addLitera(checkTime(time.difference.diffHour), `H`);
+  let diffMinute = addLitera(checkTime(time.difference.diffMinute), `M`);
 
   return `
     <li class="trip-events__item">
@@ -25,7 +50,7 @@ function createPointTemplate(point) {
             &mdash;
             <time class="event__end-time" datetime=${time.endDate}>${endTime}</time>
           </p>
-          <p class="event__duration">30M</p>
+          <p class="event__duration">${diffDay}&nbsp;${diffHour}&nbsp;${diffMinute}</p>
         </div>
         <p class="event__price">
           &euro;&nbsp;<span class="event__price-value">20</span>
