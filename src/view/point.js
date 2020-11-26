@@ -1,4 +1,6 @@
-function createPointTemplate() {
+function createPointTemplate(point) {
+  const {city, pointType} = point;
+
   return `
     <li class="trip-events__item">
       <div class="event">
@@ -11,7 +13,7 @@ function createPointTemplate() {
             src="img/icons/taxi.png"
             alt="Event type icon">
         </div>
-        <h3 class="event__title">Taxi Amsterdam</h3>
+        <h3 class="event__title">${pointType} ${city}</h3>
         <div class="event__schedule">
           <p class="event__time">
             <time class="event__start-time" datetime="2019-03-18T10:30">10:30</time>
@@ -25,11 +27,6 @@ function createPointTemplate() {
         </p>
         <h4 class="visually-hidden">Offers:</h4>
         <ul class="event__selected-offers">
-          <li class="event__offer">
-            <span class="event__offer-title">Order Uber</span>
-            &plus;&euro;&nbsp;
-            <span class="event__offer-price">20</span>
-          </li>
         </ul>
         <button class="event__favorite-btn event__favorite-btn--active" type="button">
           <span class="visually-hidden">Add to favorite</span>

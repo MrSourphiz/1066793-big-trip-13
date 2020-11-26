@@ -8,8 +8,12 @@ import {createListTemplate} from "./view/list.js";
 import {createPointTemplate} from "./view/point.js";
 import {createTemplateForAddNewPoint} from "./view/add-new-point.js";
 import {createTemplateForEditPoint} from "./view/edit-point.js";
+import {createOfferTemplate} from "./view/offer-item.js";
+import {createEmptyOfferTemplate} from "./view/offer-item.js";
+import {generateWayPoint} from "./mock/waypoint.js";
 
-const TRIP_EVENT_COUNT = 3;
+const TRIP_EVENT_COUNT = 17;
+const wayPointArray = new Array(TRIP_EVENT_COUNT).fill().map(generateWayPoint);
 
 function render(container, template, place) {
   container.insertAdjacentHTML(place, template);
@@ -34,7 +38,18 @@ render(tripEvents, createListTemplate(), 'beforeend');
 const tripEventsList = tripEvents.querySelector('.trip-events__list');
 
 for (let i = 0; i < TRIP_EVENT_COUNT; i++) {
-  render(tripEventsList, createPointTemplate(), 'beforeend');
+  render(tripEventsList, createPointTemplate(wayPointArray[i]), 'beforeend');
+}
+
+const offerList = document.querySelectorAll('.event__selected-offers');
+for (let i = 0; i < offerList.length; i++) {
+  if (wayPointArray[i].offers.offerType.length === 0) {
+    render(offerList[i], createEmptyOfferTemplate(), 'beforeend');
+  } else {
+    for (let j = 0; j < wayPointArray[i].offers.offerType.length; j++) {
+      render(offerList[i], createOfferTemplate(wayPointArray[i].offers.offerType[j], wayPointArray[i].offers.offerPrice[j]), 'beforeend');
+    }
+  }
 }
 
 const tripEventsItems = tripEventsList.querySelectorAll('.trip-events__item');
