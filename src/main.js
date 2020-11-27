@@ -13,7 +13,15 @@ import {createEmptyOfferTemplate} from "./view/offer-item.js";
 import {generateWayPoint} from "./mock/waypoint.js";
 
 const TRIP_EVENT_COUNT = 17;
-const wayPointArray = new Array(TRIP_EVENT_COUNT).fill().map(generateWayPoint);
+let wayPointArray = new Array(TRIP_EVENT_COUNT).fill().map(generateWayPoint).sort(function (prev, next) {
+  if (prev.time.startDate < next.time.startDate) {
+    return -1;
+  }
+  if (prev.time.startDate > next.time.startDate) {
+    return 1;
+  }
+  return 0;
+});
 
 function render(container, template, place) {
   container.insertAdjacentHTML(place, template);
