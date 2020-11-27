@@ -5,8 +5,8 @@ const DAY_DURATION = 24;
 const HOUR_DURATION = 60;
 
 const MAX_DAYS_GAP = 2;
-const MAX_HOURS_GAP = 12;
-const MAX_MINUTES_GAP = 45;
+const MAX_HOURS_GAP = 10;
+const MAX_MINUTES_GAP = 30;
 
 function getDate() {
   const daysGap = getRandomInteger(-MAX_DAYS_GAP, MAX_DAYS_GAP);
@@ -35,7 +35,7 @@ function generateTime() {
   let startTime = getDate();
   let endTime = getDate();
 
-  if (endTime < startTime || endTime === startTime) {
+  while (new Date(startTime) >= new Date(endTime)) {
     endTime = getDate();
   }
 
