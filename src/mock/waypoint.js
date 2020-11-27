@@ -18,6 +18,9 @@ const POINT_TYPES = [
 
 const CITIES = [`Amsterdam`, `Geneva`, `Chamonix`, `Paris`, `Lyon`];
 
+const MIN_PRICE = 10;
+const MAX_PRICE = 100;
+
 function getRandomInfo(array) {
   const randomIndex = getRandomInteger(0, array.length - 1);
   return array[randomIndex];
@@ -29,7 +32,8 @@ function generateWayPoint() {
     city: getRandomInfo(CITIES),
     offers: generateOffer(),
     pointInfo: generatePointDescription(),
-    time: generateTime()
+    time: generateTime(),
+    price: getRandomInteger(MIN_PRICE, MAX_PRICE)
   };
 }
 
