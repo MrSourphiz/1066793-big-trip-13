@@ -4,8 +4,8 @@ import dayjs from "dayjs";
 const DAY_DURATION = 24;
 const HOUR_DURATION = 60;
 
-const MAX_DAYS_GAP = 2;
-const MAX_HOURS_GAP = 10;
+const MAX_DAYS_GAP = 1;
+const MAX_HOURS_GAP = 2;
 const MAX_MINUTES_GAP = 30;
 
 function getDate() {

@@ -31,7 +31,7 @@ const tripMain = document.querySelector('.trip-main');
 render(tripMain, createInfoTemplate(), 'afterbegin');
 
 const tripInfo = tripMain.querySelector('.trip-info');
-render(tripInfo, createRouteTemplate(), 'beforeend');
+render(tripInfo, createRouteTemplate(wayPointArray), 'beforeend');
 render(tripInfo, createCostTemplate(), 'beforeend');
 
 const tripControls = tripMain.querySelector('.trip-main__trip-controls');
