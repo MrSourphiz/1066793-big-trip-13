@@ -32,7 +32,7 @@ render(tripMain, createInfoTemplate(), 'afterbegin');
 
 const tripInfo = tripMain.querySelector('.trip-info');
 render(tripInfo, createRouteTemplate(wayPointArray), 'beforeend');
-render(tripInfo, createCostTemplate(), 'beforeend');
+render(tripInfo, createCostTemplate(wayPointArray), 'beforeend');
 
 const tripControls = tripMain.querySelector('.trip-main__trip-controls');
 const tripControlsTitles = tripControls.querySelectorAll('.visually-hidden');
