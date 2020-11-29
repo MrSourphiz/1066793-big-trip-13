@@ -8,6 +8,8 @@ import {createListTemplate} from "./view/list.js";
 import {createPointTemplate} from "./view/point.js";
 import {createTemplateForAddNewPoint} from "./view/add-new-point.js";
 import {createTemplateForEditPoint} from "./view/edit-point.js";
+import {createPhotoTemplate} from "./view/photo.js";
+import {createAvailableOfferTemplate} from "./view/available-offer.js";
 import {createOfferTemplate} from "./view/offer-item.js";
 import {createEmptyOfferTemplate} from "./view/offer-item.js";
 import {generateWayPoint} from "./mock/waypoint.js";
@@ -61,7 +63,41 @@ for (let i = 0; i < offerList.length; i++) {
 }
 
 const tripEventsItems = tripEventsList.querySelectorAll('.trip-events__item');
-render(tripEventsItems[0], createTemplateForEditPoint(), 'afterend');
+const tripEventsRollupButton = tripEventsList.querySelectorAll('.event__rollup-btn');
+
+for (let k = 0; k < TRIP_EVENT_COUNT; k++) {
+  render(tripEventsItems[k], createTemplateForEditPoint(wayPointArray[k]), 'afterend');
+}
+
+const tripEventsEditItems = tripEventsList.querySelectorAll('.event--edit');
+
+for (let z = 0; z < tripEventsEditItems.length; z++) {
+  tripEventsEditItems[z].classList.add('visually-hidden');
+}
+
+function getPhotos(place, index) {
+  wayPointArray[index].pointInfo.photos.forEach(function (item) {
+    render(place, createPhotoTemplate(item), 'beforeend');
+  });
+}
+
+function getAvailableOffers(place, index) {
+  wayPointArray[index].offers.offerType.forEach(function (item, i) {
+    render(place, createAvailableOfferTemplate(item, wayPointArray[index].offers.offerPrice[i]), 'beforeend');
+  });
+}
+
+tripEventsRollupButton.forEach(function (item, index) {
+  const tripPhotos = tripEventsEditItems[index].querySelector('.event__photos-tape');
+  const tripAvailableOffers = tripEventsEditItems[index].querySelector('.event__available-offers');
+
+  item.addEventListener('click', function () {
+    getPhotos(tripPhotos, index);
+    getAvailableOffers(tripAvailableOffers, index);
+    tripEventsEditItems[index].classList.remove('visually-hidden');
+    item.setAttribute('disabled', 'disabled');
+  });
+});
 
 render(tripEventsList, createTemplateForAddNewPoint(), 'afterbegin');
 

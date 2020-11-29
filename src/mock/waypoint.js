@@ -12,7 +12,7 @@ const POINT_TYPES = [
   `Drive`,
   `Flight`,
   `Check-in`,
-  `Sightseeng`,
+  `Sightseeing`,
   `Restaurant`
 ];
 

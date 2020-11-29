@@ -40,7 +40,7 @@ function createPointTemplate(point) {
             class="event__type-icon"
             width="42"
             height="42"
-            src="img/icons/taxi.png"
+            src="img/icons/${pointType}.png"
             alt="Event type icon">
         </div>
         <h3 class="event__title">${pointType} ${city}</h3>
