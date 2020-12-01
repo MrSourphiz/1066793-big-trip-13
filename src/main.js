@@ -15,7 +15,8 @@ import {createEmptyOfferTemplate} from "./view/offer-item.js";
 import {generateWayPoint} from "./mock/waypoint.js";
 
 const TRIP_EVENT_COUNT = 17;
-let wayPointArray = new Array(TRIP_EVENT_COUNT).fill().map(generateWayPoint).sort(function (prev, next) {
+
+function compareElements(prev, next) {
   if (prev.time.startDate < next.time.startDate) {
     return -1;
   }
@@ -23,7 +24,9 @@ let wayPointArray = new Array(TRIP_EVENT_COUNT).fill().map(generateWayPoint).sor
     return 1;
   }
   return 0;
-});
+}
+
+let wayPointArray = new Array(TRIP_EVENT_COUNT).fill().map(generateWayPoint).sort(compareElements);
 
 function render(container, template, place) {
   container.insertAdjacentHTML(place, template);
@@ -52,28 +55,28 @@ for (let i = 0; i < TRIP_EVENT_COUNT; i++) {
 }
 
 const offerList = document.querySelectorAll('.event__selected-offers');
-for (let i = 0; i < offerList.length; i++) {
-  if (wayPointArray[i].offers.offerType.length === 0) {
-    render(offerList[i], createEmptyOfferTemplate(), 'beforeend');
+offerList.forEach(function (item, index) {
+  if (wayPointArray[index].offers.offerType.length === 0) {
+    render(item, createEmptyOfferTemplate(), 'beforeend');
   } else {
-    for (let j = 0; j < wayPointArray[i].offers.offerType.length; j++) {
-      render(offerList[i], createOfferTemplate(wayPointArray[i].offers.offerType[j], wayPointArray[i].offers.offerPrice[j]), 'beforeend');
+    for (let j = 0; j < wayPointArray[index].offers.offerType.length; j++) {
+      render(item, createOfferTemplate(wayPointArray[index].offers.offerType[j], wayPointArray[index].offers.offerPrice[j]), 'beforeend');
     }
   }
-}
+});
 
 const tripEventsItems = tripEventsList.querySelectorAll('.trip-events__item');
 const tripEventsRollupButton = tripEventsList.querySelectorAll('.event__rollup-btn');
 
-for (let k = 0; k < TRIP_EVENT_COUNT; k++) {
-  render(tripEventsItems[k], createTemplateForEditPoint(wayPointArray[k]), 'afterend');
-}
+tripEventsItems.forEach(function (item, index) {
+  render(item, createTemplateForEditPoint(wayPointArray[index]), 'afterend');
+});
 
 const tripEventsEditItems = tripEventsList.querySelectorAll('.event--edit');
 
-for (let z = 0; z < tripEventsEditItems.length; z++) {
-  tripEventsEditItems[z].classList.add('visually-hidden');
-}
+tripEventsEditItems.forEach(function (item) {
+  item.classList.add('visually-hidden');
+});
 
 function getPhotos(place, index) {
   wayPointArray[index].pointInfo.photos.forEach(function (item) {
